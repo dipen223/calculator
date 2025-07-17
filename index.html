@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Rounded:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <h1>Project Calculator</h1>
 
    <div class="calculator-container">
     <div class="display-container">
-        <span id="result">ok</span>
+        <span id="result"></span>
     </div>
     <div class="btn-container">
-        <button class="text">7</button>
+        <button class="text" id="seven">7</button>
         <button class="text">8</button>
         <button class="text">9</button>
         <button class="operator">X</button>
@@ -29,8 +31,10 @@
         <button class="text">%</button>
         <button class="text">0</button>
         <button class="text">=</button>
-        <button class="operator">Clear</button>
+        <button class="operator clear">Clear</button>
     </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
