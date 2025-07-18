@@ -81,6 +81,9 @@ const displayPopulator = () => {
 
             }
             else if (btnVal === "=") {
+                if(operand1 !== null && operator !== null && currentInput !== ""){
+
+                
                 operand2 = Number(currentInput);
                 const result = operate(operand1, operand2, operator);
                 displayResult.innerText = result;
@@ -88,6 +91,7 @@ const displayPopulator = () => {
                 operand1 = null;
                 operand2 = null;
             }
+        }
 
 
         });
