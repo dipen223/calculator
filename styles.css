@@ -30,7 +30,6 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     gap:6px;
-    margin-bottom: -30px;
  
 }
 
@@ -59,6 +58,9 @@ button:hover{
     background-color: #ff9500;
 }
 
+.display-container{
+    height:10px;
+}
 .display-container span{
     color:#fff;
     font-weight:bold;
