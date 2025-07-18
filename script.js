@@ -28,7 +28,21 @@ let operand2;
 
 const operate  = (val1,val2,operator) => {
 //  write a code to check which operator has been passed
-    add(val1,val2);
+    if(operator === "+")
+    {
+        return add(val1,val2);
+
+    }
+    else if(operator === "-"){
+        return subtract(val1,val2);
+    }
+    else if(operator === "X"){
+        return multiply(val1,val2);
+    }
+    else if(operator === "/"){
+        return divide(val1,val2);
+    }
+    
 
 }
 
