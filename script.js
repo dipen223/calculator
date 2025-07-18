@@ -25,6 +25,7 @@ const divide = (a,b) => {
 let operand1;
 let operator;
 let operand2;
+let currentInput = "";
 
 const operate  = (val1,val2,operator) => {
 //  write a code to check which operator has been passed
@@ -51,7 +52,7 @@ const displayPopulator = () =>{
 
 const arrBtns = [...buttons];
 
-let currentInput = "";
+
 
 arrBtns.forEach((btn) => {
     btn.addEventListener("click", ()=> {
@@ -91,6 +92,10 @@ displayPopulator();
 
 const clearDisplay = () => {
     displayResult.innerText = "";
+    operand1 = null;
+    operand2 = null;
+    operator = "";
+    currentInput="";
 
 }
 
