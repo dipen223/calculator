@@ -1,5 +1,5 @@
 const buttons  = document.querySelectorAll("button");
-
+const clearBtn = document.querySelector(".clear");
 const displayResult = document.getElementById("result");
 
 const add = (a,b) => {
@@ -23,31 +23,61 @@ const divide = (a,b) => {
 }
 
 let operand1;
-let operator1;
+let operator;
 let operand2;
 
-const operator  = (val1,val2,operator) => {
-
+const operate  = (val1,val2,operator) => {
+//  write a code to check which operator has been passed
     add(val1,val2);
 
 }
 
 
 const displayPopulator = () =>{
-const arrBtns = [...buttons];
-arrBtns.forEach((btn) => {
-    const btnVal = btn.innerText;
-    btn.addEventListener("click",() => {
-        displayResult.innerText += btnVal;
-    })
-})
 
-}
+const arrBtns = [...buttons];
+
+let currentInput = "";
+
+arrBtns.forEach((btn) => {
+    btn.addEventListener("click", ()=> {
+        const btnVal = btn.innerText;
+
+        if(!isNaN(btnVal)){
+        currentInput += btnVal;
+        displayResult.innerText += btnVal;
+    }
+    else if(["+","-","/","X"].includes(btnVal)){
+        operand1 = Number(currentInput);
+        operator = btnVal;
+        currentInput="";
+        displayResult.innerText += `${btnVal}`
+    }
+    else if(btnVal === "="){
+        operand2 = Number(currentInput);
+        const result = operate(operand1,operand2,operator);
+        displayResult.innerText  = result;
+        currentInput = result.toString();
+        operand1 = null;
+        operand2 = null;
+    }
+    
+
+    });
+
+ 
+    
+});
+
+};
 
 displayPopulator();
 
 
 
 const clearDisplay = () => {
+    displayResult.innerText = "";
 
 }
+
+clearBtn.addEventListener("click",clearDisplay);
